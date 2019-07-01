@@ -8,11 +8,13 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
+                background-image: url("/uploads/background.jpg");
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -78,10 +80,19 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    EasyBazar
+            
+            <div class="container container-fluid">
+                <div class="row">
+                    @foreach ($categories as $category)
+                    <div class="col-md-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/uploads/{{ $category->image }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                    <p>{{ $category->name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

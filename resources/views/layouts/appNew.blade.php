@@ -13,19 +13,20 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
+    
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="{{ asset('css/personal.css') }}" rel="stylesheet">
 </head>
-<body background="/uploads/background.jpg">
+<body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav  id="nav" class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'EasyBazar') }}
+                <a id="brand2" class="navbar-brand " href="{{ url('/') }}">
+                    <font size="8">{{ config('app.name', 'EasyBazar') }}</font>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -42,19 +43,19 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a id="brand"  class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <li   class="nav-item">
+                                    <a id="brand" class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="navbar nav-item">
-                                <a href="/postAd" class="text-secondary">Post Ad</a>
+                                <a id="brand" href="/postAd" class="text-secondary">Post Ad</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="brand" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -79,6 +80,17 @@
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
+    <footer class="page-footer font-medium darken-3">
+
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a  href="{{ url('/') }}"> EasyBazar.com</a>
+            <p> HeadQuarter: Dhanmondi,Dhaka.</p>
+            <p> Contact Us: 01731865911</p>
+
+        </div>
+
+    </footer>
 </body>
 </html>

@@ -113,7 +113,7 @@ class PostAdController extends Controller
 
         $advertisement->save();
 
-        return "Success";
+        return redirect("/advertisements/{$product->id}");
 
     }
 }

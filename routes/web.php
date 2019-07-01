@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'IndexPageController@index')->name('index');
+
+Route::get('/test', function () {
+    return view('test');
 });
 
 Auth::routes();
@@ -30,3 +32,7 @@ Route::get('/admin', function() {
 Route::post('/admin/submit', 'AdminController@submit');
 
 Route::post('/postAd/submit', 'PostAdController@submit');
+
+Route::get('/categories/{id}', 'ShowProductsController@index');
+
+Route::get('/advertisements/{id}', 'ShowAdController@index');

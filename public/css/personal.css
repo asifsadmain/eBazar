@@ -1,0 +1,35 @@
+#app {
+    /* background-image: url("/img/bg_login.jpg"); */
+
+    /* background-color:aquamarine;  */
+}
+#nav {
+    background-color:aqua; 
+}
+
+#brand2 {
+    font-family: fantasy;
+    color: coral;
+}
+
+footer {
+    background-color:aquamarine; 
+}
+
+#brand {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+    color: floralwhite;
+}
+
+#header_card {
+    font-family: fantasy;
+    font-size: 200%;
+    background-color:cadetblue; 
+}
+
+.label_font {
+    font-family: Impact;
+    color:cadetblue;
+    font-size: 150%;
+}
