@@ -43,7 +43,7 @@
                             <label for="brand" class="col-md-4 col-form-label text-md-right">{{ __('Brand') }}</label>
 
                             <div class="col-md-6">
-                                <input id="brand" type="text" class="form-control @error('brand') is-invalid @enderror" name="brand" value="{{ old('brand') }}" required autocomplete="brand" autofocus>
+                                <input id="product_brand" type="text" class="form-control @error('brand') is-invalid @enderror" name="brand" value="{{ old('brand') }}" required autocomplete="brand" autofocus>
 
                                 @error('brand')
                                     <span class="invalid-feedback" role="alert">

@@ -1,5 +1,5 @@
 #app {
-    /* background-image: url("/img/bg_login.jpg"); */
+    background-image: url("/uploads/background.jpg");
 
     /* background-color:aquamarine;  */
 }
@@ -28,8 +28,33 @@ footer {
     background-color:cadetblue; 
 }
 
+
 .label_font {
     font-family: Impact;
     color:cadetblue;
     font-size: 150%;
+}
+
+#category{
+    font-family: fantasy;
+    font-style: oblique;
+    color: aqua;
+}
+
+
+#cate {
+    font-family: fantasy;
+    font-style: oblique;
+    color: goldenrod;
+}
+
+#img {
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 3px;
+}
+
+
+#card {
+    background-color: burlywood;
 }

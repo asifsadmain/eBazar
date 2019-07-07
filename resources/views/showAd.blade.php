@@ -19,6 +19,7 @@
                         <img height="500" class="card-img-top" src="/uploads/{{ $advertisement->display_image }}" alt="Card image cap"><br>
                         <h1 class="text-primary text-center">{{ $advertisement->product_name }}</h1>
                         <h3 class="text-danger text-center">BDT: {{ $advertisement->proposed_price }}</h3>
+                        <p class="text-primary text-center">{{ $advertisement->address }}</p>
                         <div class="card-body text-center">
                             <h5 class="card-text text-primary">Brand:</h5>
                             <p class="card-text">{{ $advertisement->brand }}</p>

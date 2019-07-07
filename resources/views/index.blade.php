@@ -7,6 +7,7 @@
         <title>EasyBazar</title>
 
         <!-- Fonts -->
+        <link href="{{ asset('css/personal.css') }}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -67,22 +68,22 @@
     </head>
     <body>
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="/">EasyBazar</a>
+            <nav  id="nav" class="navbar navbar-expand-md navbar-light shadow-sm">
+                <a id="brand2" class="navbar-brand" href="/"><font size="8"> EasyBazar </font></a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     @if (Route::has('login'))
                         <ul class="navbar-nav ml-auto">
                             @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                                <a id="brand" class="nav-link" href="{{ url('/home') }}">Home</a>
                             </li>  
                     @else
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <a id="brand" class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
                             @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                <a id="brand" class="nav-link" href="{{ route('register') }}">Register</a>
                             </li>
                     @endif
                             @endauth
@@ -90,11 +91,16 @@
                     @endif
                 </div>
             </nav>
-        </div><br><br>
-        <div>
-            <h1 class="display-1 text-center text-secondary"> Welcome to EasyBazar</h1>
-            <h3 class="text-center font-italic text-secondary">The most trustworthy online buy and sell platform for you</h3>
-        </div><br><br><br>
-        @extends('layouts.showCategory')
+        </div>
+
+
+    <br><br>
+    <div>
+        <h1 class="display-1 text-center text-secondary"> Welcome to EasyBazar</h1>
+        <h3 class="text-center font-italic text-secondary">The most trustworthy online buy and sell platform for you</h3>
+    </div><br><br><br>
+    @extends('layouts.showCategory')
+
     </body>
+
 </html>
