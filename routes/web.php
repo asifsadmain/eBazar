@@ -36,3 +36,11 @@ Route::post('/postAd/submit', 'PostAdController@submit');
 Route::get('/categories/{id}', 'ShowProductsController@index');
 
 Route::get('/advertisements/{id}', 'ShowAdController@index');
+
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
+
+Route::get('/conversations', function() {
+    return view('conversation');
+});
