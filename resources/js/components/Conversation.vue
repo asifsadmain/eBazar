@@ -40,7 +40,7 @@
             'MessageComposer': MessageComposer
         }
     }
- </script>
+</script>
 
 <style lang="scss" scoped>
 .conversation {

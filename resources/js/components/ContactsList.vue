@@ -32,7 +32,6 @@
         methods: {
             selectContact(index, contact) {
                 this.selected = index;
-
                 this.$emit('selected', contact);
             }
         }

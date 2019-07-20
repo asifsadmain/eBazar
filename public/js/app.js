@@ -1878,8 +1878,8 @@ __webpack_require__.r(__webpack_exports__);
 
       //this.updateUnreadCount(contact, true);
       console.log(contact.id);
-      var myID = contact.id;
-      axios.get('/conversation/' + myID).then(function (response) {
+      var selectedID = contact.id;
+      axios.get('/conversation/' + selectedID).then(function (response) {
         console.log(response.data);
         _this2.messages = response.data;
         _this2.selectedContact = contact;
@@ -2048,6 +2048,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! timers */ "./node_modules/timers-browserify/main.js");
+/* harmony import */ var timers__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(timers__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2060,6 +2062,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     contact: {
@@ -2074,7 +2077,7 @@ __webpack_require__.r(__webpack_exports__);
     scrollToBottom: function scrollToBottom() {
       var _this = this;
 
-      setTimeout(function () {
+      Object(timers__WEBPACK_IMPORTED_MODULE_0__["setTimeout"])(function () {
         _this.$refs.feed.scrollTop = _this.$refs.feed.scrollHeight - _this.$refs.feed.clientHeight;
       }, 50);
     }
@@ -2084,7 +2087,7 @@ __webpack_require__.r(__webpack_exports__);
       this.scrollToBottom();
     },
     messages: function messages(_messages) {
-      this.scrollToBottom();
+      this.scrollToBottom(); //this.checkNewMessages();
     }
   }
 });

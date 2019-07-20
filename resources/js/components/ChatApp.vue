@@ -38,8 +38,8 @@
             startConversationWith(contact) {
                 //this.updateUnreadCount(contact, true);
                 console.log(contact.id);
-                var myID = contact.id;
-                axios.get('/conversation/' + myID)
+                var selectedID = contact.id;
+                axios.get('/conversation/' + selectedID)
                     .then((response) => {
                         console.log(response.data);
                         this.messages = response.data;

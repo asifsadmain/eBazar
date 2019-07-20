@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { setTimeout } from 'timers';
     export default {
         props: {
             contact: {
@@ -26,7 +27,10 @@
                 setTimeout(() => {
                     this.$refs.feed.scrollTop = this.$refs.feed.scrollHeight - this.$refs.feed.clientHeight;
                 }, 50);
-            }
+            },
+            // checkNewMessages() {
+            //     setTimeout(50);
+            // }
         },
         watch: {
             contact(contact) {
@@ -34,6 +38,7 @@
             },
             messages(messages) {
                 this.scrollToBottom();
+                //this.checkNewMessages();
             }
         }
     }

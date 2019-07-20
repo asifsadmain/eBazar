@@ -7,7 +7,9 @@ use App\Product;
 use App\Advertisement;
 use App\User;
 use App\Category;
+use App\Message;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class ShowAdController extends Controller
 {
@@ -26,5 +28,18 @@ class ShowAdController extends Controller
             ->get();
 
         return view('showAd', ['advertisements' => $advertisementDetails, 'categories' => Category::all()]);
+    }
+
+    public function sendMessage(Request $request, $id)
+    {
+        $message = new Message;
+
+        $message->from = Auth::user()->id;
+        $message->to = $id;
+        $message->text = $request->input('text');
+
+        $message->save();
+
+        return redirect("/conversations");
     }
 }

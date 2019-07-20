@@ -56,6 +56,9 @@
                             <li class="navbar nav-item">
                                 <a id="brand" href="/postAd" class="text-secondary">Post Ad</a>
                             </li>
+                            <li class="navbar nav-item">
+                                <a id="brand" href="/conversations" class="text-secondary">Messages</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="brand" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
