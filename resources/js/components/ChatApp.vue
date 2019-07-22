@@ -1,13 +1,14 @@
 <template>
     <div class="chat-app bg-light">
         <Conversation :contact="selectedContact" :messages="messages" @new="saveNewMessage"/>
-        <ContactsList :contacts="contacts" @selected="startConversationWith"/>
+        <ContactsList :contacts="contacts" @selected="startTrigger"/>
     </div>
 </template>
 
 <script>
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';
+import { setInterval, clearInterval } from 'timers';
 
     export default {
         props: {
@@ -21,7 +22,8 @@
             return {
                 selectedContact: null,
                 messages: [],
-                contacts: []
+                contacts: [],
+                trigger: null
             };
         },
 
@@ -45,6 +47,12 @@
                         this.messages = response.data;
                         this.selectedContact = contact;
                     })
+            },
+            startTrigger(contact) {
+                clearInterval(this.trigger);
+                this.trigger = setInterval(() => {
+                    this.startConversationWith(contact);
+                }, 1000);
             },
             saveNewMessage(message) {
                 this.messages.push(message);

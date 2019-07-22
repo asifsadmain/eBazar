@@ -2,8 +2,7 @@
 
 @section('content')
 <div class="container">
-    <p id="category" class="display-3"> Category:</p>
-    <br><br><br>
+    <br><br><br><br><br><br>
     <div class="container container-fluid">
         <div class="row">
             @foreach ($categories as $category)
